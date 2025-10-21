@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedMinder - Futuristic Reminder</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <main class="container">
+        <header class="app-header">
+            <h1>MedMinder💊</h1>
+            <p>Your AI-Powered Health Assistant</p>
+        </header>
+
+        <section class="card" id="permission-card">
+            <h2>Enable Notifications</h2>
+            <p>Click the button below to allow notifications and get started.</p>
+            <button id="enable-notifications-btn" class="btn btn-primary">Enable Notifications</button>
+        </section>
+
+        <section class="card" id="app-content" style="display: none;">
+            <form id="medicine-form">
+                <div class="form-group">
+                    <label for="medicine-name">Medicine Name</label>
+                    <input type="text" id="medicine-name" required placeholder="e.g., Paracetamol">
+                </div>
+                <div class="form-group">
+                    <label for="dosage">Dosage</label>
+                    <input type="text" id="dosage" required placeholder="e.g., 1 tablet">
+                </div>
+                <div class="form-group">
+                    <label for="time">Reminder Time</label>
+                    <input type="time" id="time" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Reminder</button>
+            </form>
+        </section>
+
+        <section class="card" id="list-container" style="display: none;">
+            <h2>Your Reminders</h2>
+            <div id="medicine-list">
+            </div>
+        </section>
+
+        <section class="card" id="progress-tracker">
+            <h2>Today's Progress</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar-inner" id="progress-bar"></div>
+            </div>
+            <p id="progress-text">No reminders set for today.</p>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
